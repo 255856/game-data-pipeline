@@ -16,22 +16,23 @@ def main(last_run_date: str = "") -> dict:
     proxy_handler = urllib.request.ProxyHandler({})
     opener = urllib.request.build_opener(https_handler, proxy_handler)
     base_headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/120.0.0.0 Safari/537.36","Accept-Language": "zh-CN,zh;q=0.9",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language": "zh-CN,zh;q=0.9",
     }
 
     game_names = []
     sources = []
     error_msg = ""
 
-    # 来源1: Steam RSS 新品 (最稳定, 带appid, 2次重试)
-    for retry in range(2):
+    # 来源1: Steam RSS 新品 (最稳定, 3次重试, 45s超时)
+    for retry in range(3):
         try:
             rss_headers = {**base_headers, "Accept": "application/xml, text/xml, */*"}
             req = urllib.request.Request(
                 "https://store.steampowered.com/feeds/newreleases.xml?cc=cn",
                 headers=rss_headers
             )
-            with opener.open(req, timeout=30) as resp:
+            with opener.open(req, timeout=45) as resp:
                 raw = resp.read()
                 if resp.headers.get("Content-Encoding") == "gzip":
                     raw = gzip.decompress(raw)
@@ -56,8 +57,8 @@ def main(last_run_date: str = "") -> dict:
                     sources.append("steam_rss")
                     break
         except Exception as e:
-            if retry == 0:
-                time.sleep(2)
+            if retry < 2:
+                time.sleep(3)
             else:
                 error_msg += f"rss: {type(e).__name__}; "
 
