@@ -1,0 +1,59 @@
+# ============================================================
+# 游戏数据自动化搜集与分析平台 — 配置模板
+# 复制此文件为 config.yaml 并填入实际值
+# ============================================================
+
+# --- Tavily Search API ---
+tavily:
+  api_key: "tvly-dev-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  endpoint: "https://api.tavily.com/search"
+
+# --- Steam API ---
+steam:
+  # Steam Web API Key (可选，在 https://steamcommunity.com/dev/apikey 申请)
+  api_key: ""
+  store_base: "https://store.steampowered.com"
+  rss_feeds:
+    new_releases: "https://store.steampowered.com/feeds/newreleases.xml?cc=cn"
+    top_sellers: "https://store.steampowered.com/feeds/topsellers.xml?cc=cn"
+
+# --- Epic Games Store API ---
+epic:
+  free_games_endpoint: "https://store-site-backend-static-ipv4.ak.epicgames.com/freeGamesPromotions"
+
+# --- MySQL 数据库 ---
+database:
+  host: "your-mysql-host"
+  port: 3306
+  user: "root"
+  password: "your-password"
+  database: "dify_test"
+
+# --- LLM 配置 (在 Dify 中配置 Model Provider) ---
+llm:
+  # 用于生成 SQL 语句
+  model: "deepseek-chat"
+  # 备选模型
+  fallback_model: "qwen3-max"
+
+# --- 企业微信推送 ---
+wechat_work:
+  webhook_url: "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx"
+
+# --- 同步配置 ---
+sync:
+  # 每次同步最多处理的游戏数
+  max_games_per_source: 20
+  # API 请求重试次数
+  max_retries: 2
+  # 请求间隔 (秒)
+  request_delay: 1.0
+  # Steam API 超时 (秒)
+  steam_timeout: 30
+  # Epic API 超时 (秒)
+  epic_timeout: 20
+
+# --- 沙箱配置 (Dify .env 中设置) ---
+sandbox:
+  code_execution_read_timeout: 300
+  sandbox_worker_timeout: 300

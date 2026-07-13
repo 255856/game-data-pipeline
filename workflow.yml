@@ -1,0 +1,5203 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: 游戏数据库助手
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.18@ef52c8128cefe169e4ea882a8c7d92e6cf0bd4f7da75be644ab6b09a3dcfa4f4
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.3@966063fe991c50e5ac82106e65fc1949f852b2989ab2433ac028f0d25c6f92b1
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: tool
+        targetType: code
+      id: 1783225297746-source-1783228849062-target
+      selected: false
+      source: '1783225297746'
+      sourceHandle: source
+      target: '1783228849062'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: if-else
+      id: 1783228849062-source-1783226630824-target
+      selected: false
+      source: '1783228849062'
+      sourceHandle: source
+      target: '1783226630824'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: if-else
+        targetType: llm
+      id: 1783226630824-false-1783226658133-target
+      selected: false
+      source: '1783226630824'
+      sourceHandle: 'false'
+      target: '1783226658133'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: if-else
+        targetType: code
+      id: 1783226630824-true-1783230195172-target
+      selected: false
+      source: '1783226630824'
+      sourceHandle: 'true'
+      target: '1783230195172'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: tool
+        targetType: code
+      id: 1783226849172-source-17832360435150-target
+      selected: false
+      source: '1783226849172'
+      sourceHandle: source
+      target: '17832360435150'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: if-else
+      id: 17832360435150-source-1783237763648-target
+      selected: false
+      source: '17832360435150'
+      sourceHandle: source
+      target: '1783237763648'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1783230195172-source-1783238945283-target
+      source: '1783230195172'
+      sourceHandle: source
+      target: '1783238945283'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1783238945283-source-1783236960593-target
+      source: '1783238945283'
+      sourceHandle: source
+      target: '1783236960593'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: if-else
+        targetType: code
+      id: 1783237763648-true-1783236290168-target
+      source: '1783237763648'
+      sourceHandle: 'true'
+      target: '1783236290168'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1783236290168-source-1783238945283-target
+      source: '1783236290168'
+      sourceHandle: source
+      target: '1783238945283'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: if-else
+        targetType: http-request
+      id: 1783237763648-false-1783218435970-target
+      source: '1783237763648'
+      sourceHandle: 'false'
+      target: '1783218435970'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1783298173866-source-1783298565072-target
+      selected: false
+      source: '1783298173866'
+      sourceHandle: source
+      target: '1783298565072'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1783298565072-source-1783237867371-target
+      selected: false
+      source: '1783298565072'
+      sourceHandle: source
+      target: '1783237867371'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: http-request
+      id: 1783230195172-fail-branch-1783218435970-target
+      source: '1783230195172'
+      sourceHandle: fail-branch
+      target: '1783218435970'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: http-request
+      id: 1783236290168-fail-branch-1783218435970-target
+      source: '1783236290168'
+      sourceHandle: fail-branch
+      target: '1783218435970'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 1783218214352-source-1783297741383-target
+      source: '1783218214352'
+      sourceHandle: source
+      target: '1783297741383'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1783297741383-source-1783302558320-target
+      source: '1783297741383'
+      sourceHandle: source
+      target: '1783302558320'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: http-request
+        targetType: code
+      id: 1783218435970-source-1783304253320-target
+      source: '1783218435970'
+      sourceHandle: source
+      target: '1783304253320'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1783304253320-source-1783238945283-target
+      source: '1783304253320'
+      sourceHandle: source
+      target: '1783238945283'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1783308516937-source-1783218214352-target
+      source: '1783308516937'
+      sourceHandle: source
+      target: '1783218214352'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1783302558320-source-1783309697885-target
+      source: '1783302558320'
+      sourceHandle: source
+      target: '1783309697885'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1783309697885-source-1783311852175-target
+      source: '1783309697885'
+      sourceHandle: source
+      target: '1783311852175'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1783311852175-source-1783298173866-target
+      source: '1783311852175'
+      sourceHandle: source
+      target: '1783298173866'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: iteration-start
+        targetType: code
+      id: 1783218214352start-source-1783320691282-target
+      source: 1783218214352start
+      sourceHandle: source
+      target: '1783320691282'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: tool
+      id: 1783320691282-source-1783225297746-target
+      source: '1783320691282'
+      sourceHandle: source
+      target: '1783225297746'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: llm
+        targetType: code
+      id: 1783226658133-source-1783325063261-target
+      source: '1783226658133'
+      sourceHandle: source
+      target: '1783325063261'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        sourceType: code
+        targetType: tool
+      id: 1783325063261-source-1783226849172-target
+      source: '1783325063261'
+      sourceHandle: source
+      target: '1783226849172'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: tool
+        targetType: code
+      id: 1783328406639017833284066401-source-1783328406639017833284066405-target
+      selected: false
+      source: '1783328406639017833284066401'
+      sourceHandle: source
+      target: '1783328406639017833284066405'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: if-else
+      id: 1783328406639017833284066405-source-1783328406639017833284066402-target
+      selected: false
+      source: '1783328406639017833284066405'
+      sourceHandle: source
+      target: '1783328406639017833284066402'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: if-else
+        targetType: llm
+      id: 1783328406639017833284066402-false-1783328406639017833284066403-target
+      selected: false
+      source: '1783328406639017833284066402'
+      sourceHandle: 'false'
+      target: '1783328406639017833284066403'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: if-else
+        targetType: code
+      id: 1783328406639017833284066402-true-1783328406639017833284066406-target
+      selected: false
+      source: '1783328406639017833284066402'
+      sourceHandle: 'true'
+      target: '1783328406639017833284066406'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: tool
+        targetType: code
+      id: 1783328406639017833284066404-source-1783328406639017833284066407-target
+      selected: false
+      source: '1783328406639017833284066404'
+      sourceHandle: source
+      target: '1783328406639017833284066407'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: if-else
+      id: 1783328406639017833284066407-source-17833284066390178332840664010-target
+      selected: false
+      source: '1783328406639017833284066407'
+      sourceHandle: source
+      target: '17833284066390178332840664010'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: if-else
+        targetType: code
+      id: 17833284066390178332840664010-true-1783328406639017833284066408-target
+      source: '17833284066390178332840664010'
+      sourceHandle: 'true'
+      target: '1783328406639017833284066408'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: if-else
+        targetType: http-request
+      id: 17833284066390178332840664010-false-1783328406639017833284066400-target
+      source: '17833284066390178332840664010'
+      sourceHandle: 'false'
+      target: '1783328406639017833284066400'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: http-request
+      id: 1783328406639017833284066406-fail-branch-1783328406639017833284066400-target
+      source: '1783328406639017833284066406'
+      sourceHandle: fail-branch
+      target: '1783328406639017833284066400'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: http-request
+      id: 1783328406639017833284066408-fail-branch-1783328406639017833284066400-target
+      source: '1783328406639017833284066408'
+      sourceHandle: fail-branch
+      target: '1783328406639017833284066400'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: http-request
+        targetType: code
+      id: 1783328406639017833284066400-source-17833284066390178332840664012-target
+      source: '1783328406639017833284066400'
+      sourceHandle: source
+      target: '17833284066390178332840664012'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: iteration-start
+        targetType: code
+      id: 1783328406639start-source-17833284066390178332840664013-target
+      source: 1783328406639start
+      sourceHandle: source
+      target: '17833284066390178332840664013'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: tool
+      id: 17833284066390178332840664013-source-1783328406639017833284066401-target
+      selected: false
+      source: '17833284066390178332840664013'
+      sourceHandle: source
+      target: '1783328406639017833284066401'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: llm
+        targetType: code
+      id: 1783328406639017833284066403-source-17833284066390178332840664014-target
+      source: '1783328406639017833284066403'
+      sourceHandle: source
+      target: '17833284066390178332840664014'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: tool
+      id: 17833284066390178332840664014-source-1783328406639017833284066404-target
+      source: '17833284066390178332840664014'
+      sourceHandle: source
+      target: '1783328406639017833284066404'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1783327914930-source-17833284066390-target
+      source: '1783327914930'
+      sourceHandle: source
+      target: '17833284066390'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 17833284066390-source-17833285632900-target
+      source: '17833284066390'
+      sourceHandle: source
+      target: '17833285632900'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17833285632900-source-17833285727700-target
+      source: '17833285632900'
+      sourceHandle: source
+      target: '17833285727700'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 17833285727700-source-1783309697885-target
+      source: '17833285727700'
+      sourceHandle: source
+      target: '1783309697885'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1783308516937-fail-branch-1783322121978-target
+      source: '1783308516937'
+      sourceHandle: fail-branch
+      target: '1783322121978'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1783327914930-fail-branch-1783322121978-target
+      source: '1783327914930'
+      sourceHandle: fail-branch
+      target: '1783322121978'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 17833285632900-source-1783384817562-target
+      source: '17833285632900'
+      sourceHandle: source
+      target: '1783384817562'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1783384817562-source-1783309697885-target
+      source: '1783384817562'
+      sourceHandle: source
+      target: '1783309697885'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1783297741383-source-1783384943521-target
+      source: '1783297741383'
+      sourceHandle: source
+      target: '1783384943521'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1783384943521-source-1783309697885-target
+      source: '1783384943521'
+      sourceHandle: source
+      target: '1783309697885'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 17833284066390178332840664012-source-1783386106120-target
+      source: '17833284066390178332840664012'
+      sourceHandle: source
+      target: '1783386106120'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1783328406639017833284066406-source-1783386106120-target
+      source: '1783328406639017833284066406'
+      sourceHandle: source
+      target: '1783386106120'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1783328406639017833284066408-source-1783386106120-target
+      source: '1783328406639017833284066408'
+      sourceHandle: source
+      target: '1783386106120'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1783386106120-source-1783328406639017833284066409-target
+      source: '1783386106120'
+      sourceHandle: source
+      target: '1783328406639017833284066409'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1783311852175-source-1783392203319-target
+      source: '1783311852175'
+      sourceHandle: source
+      target: '1783392203319'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1783392203319-source-1783298565072-target
+      source: '1783392203319'
+      sourceHandle: source
+      target: '1783298565072'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1783656394457-source-1783308516937-target
+      source: '1783656394457'
+      sourceHandle: source
+      target: '1783308516937'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1783656394457-source-1783327914930-target
+      source: '1783656394457'
+      sourceHandle: source
+      target: '1783327914930'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables: []
+      height: 73
+      id: '1783656394457'
+      position:
+        x: 0
+        y: 1034.2
+      positionAbsolute:
+        x: 0
+        y: 1034.2
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 960
+        is_parallel: false
+        iterator_input_type: array[object]
+        iterator_selector:
+        - '1783308516937'
+        - game_names
+        output_selector:
+        - '1783236960593'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: true
+        start_node_id: 1783218214352start
+        title: Steam 迭代
+        type: iteration
+        width: 4752
+      height: 960
+      id: '1783218214352'
+      position:
+        x: 724
+        y: 0
+      positionAbsolute:
+        x: 724
+        y: 0
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 4752
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1783218214352start
+      parentId: '1783218214352'
+      position:
+        x: 60
+        y: 78.95833333333336
+      positionAbsolute:
+        x: 784
+        y: 78.95833333333336
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-2341
+            key: ''
+            type: text
+            value: '{"query": "{{{#1783218214352.item#}}} 游戏 发行日期 开发商 简介", "search_depth":
+              "basic"}'
+          type: json
+        headers: 'Authorization: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
+
+          Content-Type:application/json'
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        method: post
+        params: format:json
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Steam_HTTP 请求
+        type: http-request
+        url: https://api.tavily.com/search
+        variables: []
+      height: 137
+      id: '1783218435970'
+      parentId: '1783218214352'
+      position:
+        x: 3464
+        y: 322.275
+      positionAbsolute:
+        x: 4188
+        y: 322.275
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        is_team_authorization: true
+        iteration_id: '1783218214352'
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Steam_id 查询
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: ''
+          query:
+            type: mixed
+            value: SELECT appid FROM steam_appid_map WHERE name = '{{#1783320691282.game_name#}}'
+        type: tool
+      height: 114
+      id: '1783225297746'
+      parentId: '1783218214352'
+      position:
+        x: 506
+        y: 62.625000000000014
+      positionAbsolute:
+        x: 1230
+        y: 62.625000000000014
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 0280f3d5-14df-4f63-9e54-7489a4c89566
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1783228849062'
+            - has_data
+          id: 'true'
+          logical_operator: and
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        selected: false
+        title: Steam_条件分支_1
+        type: if-else
+      height: 148
+      id: '1783226630824'
+      parentId: '1783218214352'
+      position:
+        x: 1150
+        y: 73.29166666666667
+      positionAbsolute:
+        x: 1874
+        y: 73.29166666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1783218214352'
+          - item
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3-max
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 2146171b-2b51-482a-b70a-b61a7aba16bc
+          role: system
+          text: '你是一个翻译机器人，需要将{{#1783218214352.item#}}游戏名字翻译成英文
+
+            输出格式为字符串'
+        selected: false
+        structured_output_enabled: false
+        title: Steam_LLM 翻译
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1783226658133'
+      parentId: '1783218214352'
+      position:
+        x: 1492
+        y: 210.60000000000002
+      positionAbsolute:
+        x: 2216
+        y: 210.60000000000002
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        is_team_authorization: true
+        iteration_id: '1783218214352'
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Steam_重新查询
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: SELECT appid FROM steam_appid_map WHERE name = '{{#1783325063261.game_name#}}'
+        type: tool
+      height: 114
+      id: '1783226849172'
+      parentId: '1783218214352'
+      position:
+        x: 2136
+        y: 220.93333333333334
+      positionAbsolute:
+        x: 2860
+        y: 220.93333333333334
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(sql_output: list) -> dict:\n    \"\"\"\n    从 SQL 查询结果中提取\
+          \ appid 和 name\n    输入格式: [{\"result\": [{\"appid\": 730}]}]\n    \"\"\"\
+          \n    try:\n        # sql_output 是一个数组，取第一个元素\n        if not sql_output\
+          \ or len(sql_output) == 0:\n            return {\n                \"appid\"\
+          : None,\n                \"name\": None,\n                \"has_data\":\
+          \ False\n            }\n        \n        # 取第一个元素\n        first_item =\
+          \ sql_output[0]\n        \n        # 获取 result 数组\n        result = first_item.get(\"\
+          result\", [])\n        \n        # 判断是否有数据\n        has_data = len(result)\
+          \ > 0\n        \n        # 提取数据\n        appid = None\n        name = None\n\
+          \        \n        if has_data:\n            game_data = result[0]\n   \
+          \         appid = game_data.get(\"appid\")\n            name = game_data.get(\"\
+          name\")\n        \n        return {\n            \"appid\": appid,\n   \
+          \         \"name\": name,\n            \"has_data\": has_data\n        }\n\
+          \        \n    except Exception as e:\n        return {\n            \"\
+          appid\": None,\n            \"name\": None,\n            \"has_data\": False,\n\
+          \            \"error\": str(e)\n        }"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          appid:
+            children: null
+            type: number
+          has_data:
+            children: null
+            type: boolean
+          name:
+            children: null
+            type: string
+        selected: false
+        title: 格式转换_1
+        type: code
+        variables:
+        - value_selector:
+          - '1783225297746'
+          - json
+          value_type: array[object]
+          variable: sql_output
+      height: 52
+      id: '1783228849062'
+      parentId: '1783218214352'
+      position:
+        x: 828
+        y: 112.62500000000001
+      positionAbsolute:
+        x: 1552
+        y: 112.62500000000001
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\nimport time\nimport random\nimport urllib.request\nimport\
+          \ urllib.error\nimport ssl\nimport gzip\n\n_EMPTY = {\n    \"name\": \"\"\
+          ,\n    \"appid\": 0,\n    \"developers\": [],\n    \"publishers\": [],\n\
+          \    \"short_desc\": \"\",\n    \"release_date\": \"\",\n    \"status\"\
+          : \"\",\n    \"message\": \"\",\n    \"info\": \"\",\n    \"price_currency\"\
+          : \"\",\n    \"price_initial\": 0,\n    \"price_final\": 0,\n    \"price_discount\"\
+          : 0,\n    \"has_price\": False,\n}\n\n\ndef main(appid: int) -> dict:\n\
+          \    time.sleep(random.uniform(2, 5))\n\n    url = f\"https://store.steampowered.com/api/appdetails?appids={appid}&cc=cn\"\
+          \n    headers = {\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0;\
+          \ Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\
+          ,\n        \"Accept\": \"application/json\",\n        \"Accept-Language\"\
+          : \"zh-CN,zh;q=0.9\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n\
+          \    }\n\n    ctx = ssl.create_default_context()\n    ctx.check_hostname\
+          \ = False\n    ctx.verify_mode = ssl.CERT_NONE\n\n    https_handler = urllib.request.HTTPSHandler(context=ctx)\n\
+          \    proxy_handler = urllib.request.ProxyHandler({})\n    opener = urllib.request.build_opener(https_handler,\
+          \ proxy_handler)\n\n    for attempt in range(2):\n        try:\n       \
+          \     req = urllib.request.Request(url, headers=headers)\n            with\
+          \ opener.open(req, timeout=40) as resp:\n                raw = resp.read()\n\
+          \                if resp.headers.get(\"Content-Encoding\") == \"gzip\":\n\
+          \                    raw = gzip.decompress(raw)\n                full =\
+          \ json.loads(raw.decode(\"utf-8\"))\n                game = full[str(appid)]\n\
+          \                if not game.get(\"success\"):\n                    return\
+          \ {**_EMPTY, \"status\": \"error\", \"message\": \"游戏未找到\"}\n          \
+          \      d = game[\"data\"]\n                devs = d.get(\"developers\")\
+          \ or []\n                pubs = d.get(\"publishers\") or []\n\n        \
+          \        # 提取价格信息 (Steam 价格单位是\"分\"，除以100)\n                price_info =\
+          \ d.get(\"price_overview\") or {}\n                currency = price_info.get(\"\
+          currency\", \"\")\n                initial = round(price_info.get(\"initial\"\
+          , 0) / 100, 2)\n                final = round(price_info.get(\"final\",\
+          \ 0) / 100, 2)\n                discount = price_info.get(\"discount_percent\"\
+          , 0)\n\n                info = (\n                    f\"游戏名: {d.get('name',\
+          \ '')}\\n\"\n                    f\"Steam ID: {d.get('steam_appid', '')}\\\
+          n\"\n                    f\"开发商: {', '.join(devs)}\\n\"\n              \
+          \      f\"发行商: {', '.join(pubs)}\\n\"\n                    f\"发售日期: {d.get('release_date',\
+          \ {}).get('date', '')}\\n\"\n                    f\"价格: {currency} {final}\
+          \ (原价 {initial}) 折扣 {discount}%\\n\"\n                    f\"简介: {d.get('short_description',\
+          \ '')}\"\n                )\n                return {\n                \
+          \    \"name\": d.get(\"name\"),\n                    \"appid\": d.get(\"\
+          steam_appid\"),\n                    \"developers\": devs,\n           \
+          \         \"publishers\": pubs,\n                    \"short_desc\": d.get(\"\
+          short_description\"),\n                    \"release_date\": d.get(\"release_date\"\
+          , {}).get(\"date\"),\n                    \"status\": \"success\",\n   \
+          \                 \"message\": \"\",\n                    \"info\": info,\n\
+          \                    \"price_currency\": currency,\n                   \
+          \ \"price_initial\": initial,\n                    \"price_final\": final,\n\
+          \                    \"price_discount\": discount,\n                   \
+          \ \"has_price\": currency != \"\",\n                }\n\n        except\
+          \ urllib.error.HTTPError as e:\n            if e.code == 429 and attempt\
+          \ == 0:\n                time.sleep(5)\n                continue\n     \
+          \       return {**_EMPTY, \"status\": \"error\", \"message\": f\"HTTP {e.code}\"\
+          , \"info\": \"\"}\n        except urllib.error.URLError as e:\n        \
+          \    if attempt == 0:\n                time.sleep(2)\n                continue\n\
+          \            return {**_EMPTY, \"status\": \"error\", \"message\": f\"网络不通:\
+          \ {e.reason}\", \"info\": \"\"}\n        except Exception as e:\n      \
+          \      return {**_EMPTY, \"status\": \"error\", \"message\": f\"{type(e).__name__}:\
+          \ {e}\", \"info\": \"\"}\n\n    return {**_EMPTY, \"status\": \"error\"\
+          , \"message\": \"重试后仍失败\", \"info\": \"\"}"
+        code_language: python3
+        error_strategy: fail-branch
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          appid:
+            children: null
+            type: number
+          developers:
+            children: null
+            type: array[string]
+          has_price:
+            children: null
+            type: boolean
+          info:
+            children: null
+            type: string
+          message:
+            children: null
+            type: string
+          name:
+            children: null
+            type: string
+          price_currency:
+            children: null
+            type: string
+          price_discount:
+            children: null
+            type: number
+          price_final:
+            children: null
+            type: number
+          price_initial:
+            children: null
+            type: number
+          publishers:
+            children: null
+            type: array[string]
+          release_date:
+            children: null
+            type: string
+          short_desc:
+            children: null
+            type: string
+          status:
+            children: null
+            type: string
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 1566
+        selected: false
+        title: Steam_请求_1
+        type: code
+        variables:
+        - value_selector:
+          - '1783228849062'
+          - appid
+          value_type: number
+          variable: appid
+      height: 117
+      id: '1783230195172'
+      parentId: '1783218214352'
+      position:
+        x: 3122
+        y: 60
+      positionAbsolute:
+        x: 3846
+        y: 60
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(sql_output: list) -> dict:\n    \"\"\"\n    从 SQL 查询结果中提取\
+          \ appid 和 name\n    输入格式: [{\"result\": [{\"appid\": 730}]}]\n    \"\"\"\
+          \n    try:\n        # sql_output 是一个数组，取第一个元素\n        if not sql_output\
+          \ or len(sql_output) == 0:\n            return {\n                \"appid\"\
+          : None,\n                \"name\": None,\n                \"has_data\":\
+          \ False\n            }\n        \n        # 取第一个元素\n        first_item =\
+          \ sql_output[0]\n        \n        # 获取 result 数组\n        result = first_item.get(\"\
+          result\", [])\n        \n        # 判断是否有数据\n        has_data = len(result)\
+          \ > 0\n        \n        # 提取数据\n        appid = None\n        name = None\n\
+          \        \n        if has_data:\n            game_data = result[0]\n   \
+          \         appid = game_data.get(\"appid\")\n            name = game_data.get(\"\
+          name\")\n        \n        return {\n            \"appid\": appid,\n   \
+          \         \"name\": name,\n            \"has_data\": has_data\n        }\n\
+          \        \n    except Exception as e:\n        return {\n            \"\
+          appid\": None,\n            \"name\": None,\n            \"has_data\": False,\n\
+          \            \"error\": str(e)\n        }"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          appid:
+            children: null
+            type: number
+          has_data:
+            children: null
+            type: boolean
+          name:
+            children: null
+            type: string
+        selected: false
+        title: Steam_格式转换_2
+        type: code
+        variables:
+        - value_selector:
+          - '1783226849172'
+          - json
+          value_type: array[object]
+          variable: sql_output
+      height: 52
+      id: '17832360435150'
+      parentId: '1783218214352'
+      position:
+        x: 2458
+        y: 270.93333333333334
+      positionAbsolute:
+        x: 3182
+        y: 270.93333333333334
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\nimport time\nimport random\nimport urllib.request\nimport\
+          \ urllib.error\nimport ssl\nimport gzip\n\n_EMPTY = {\n    \"name\": \"\"\
+          ,\n    \"appid\": 0,\n    \"developers\": [],\n    \"publishers\": [],\n\
+          \    \"short_desc\": \"\",\n    \"release_date\": \"\",\n    \"status\"\
+          : \"\",\n    \"message\": \"\",\n    \"info\": \"\",\n    \"price_currency\"\
+          : \"\",\n    \"price_initial\": 0,\n    \"price_final\": 0,\n    \"price_discount\"\
+          : 0,\n    \"has_price\": False,\n}\n\n\ndef main(appid: int) -> dict:\n\
+          \    time.sleep(random.uniform(2, 5))\n\n    url = f\"https://store.steampowered.com/api/appdetails?appids={appid}&cc=cn\"\
+          \n    headers = {\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0;\
+          \ Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\
+          ,\n        \"Accept\": \"application/json\",\n        \"Accept-Language\"\
+          : \"zh-CN,zh;q=0.9\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n\
+          \    }\n\n    ctx = ssl.create_default_context()\n    ctx.check_hostname\
+          \ = False\n    ctx.verify_mode = ssl.CERT_NONE\n\n    https_handler = urllib.request.HTTPSHandler(context=ctx)\n\
+          \    proxy_handler = urllib.request.ProxyHandler({})\n    opener = urllib.request.build_opener(https_handler,\
+          \ proxy_handler)\n\n    for attempt in range(2):\n        try:\n       \
+          \     req = urllib.request.Request(url, headers=headers)\n            with\
+          \ opener.open(req, timeout=40) as resp:\n                raw = resp.read()\n\
+          \                if resp.headers.get(\"Content-Encoding\") == \"gzip\":\n\
+          \                    raw = gzip.decompress(raw)\n                full =\
+          \ json.loads(raw.decode(\"utf-8\"))\n                game = full[str(appid)]\n\
+          \                if not game.get(\"success\"):\n                    return\
+          \ {**_EMPTY, \"status\": \"error\", \"message\": \"游戏未找到\"}\n          \
+          \      d = game[\"data\"]\n                devs = d.get(\"developers\")\
+          \ or []\n                pubs = d.get(\"publishers\") or []\n\n        \
+          \        # 提取价格信息 (Steam 价格单位是\"分\"，除以100)\n                price_info =\
+          \ d.get(\"price_overview\") or {}\n                currency = price_info.get(\"\
+          currency\", \"\")\n                initial = round(price_info.get(\"initial\"\
+          , 0) / 100, 2)\n                final = round(price_info.get(\"final\",\
+          \ 0) / 100, 2)\n                discount = price_info.get(\"discount_percent\"\
+          , 0)\n\n                info = (\n                    f\"游戏名: {d.get('name',\
+          \ '')}\\n\"\n                    f\"Steam ID: {d.get('steam_appid', '')}\\\
+          n\"\n                    f\"开发商: {', '.join(devs)}\\n\"\n              \
+          \      f\"发行商: {', '.join(pubs)}\\n\"\n                    f\"发售日期: {d.get('release_date',\
+          \ {}).get('date', '')}\\n\"\n                    f\"价格: {currency} {final}\
+          \ (原价 {initial}) 折扣 {discount}%\\n\"\n                    f\"简介: {d.get('short_description',\
+          \ '')}\"\n                )\n                return {\n                \
+          \    \"name\": d.get(\"name\"),\n                    \"appid\": d.get(\"\
+          steam_appid\"),\n                    \"developers\": devs,\n           \
+          \         \"publishers\": pubs,\n                    \"short_desc\": d.get(\"\
+          short_description\"),\n                    \"release_date\": d.get(\"release_date\"\
+          , {}).get(\"date\"),\n                    \"status\": \"success\",\n   \
+          \                 \"message\": \"\",\n                    \"info\": info,\n\
+          \                    \"price_currency\": currency,\n                   \
+          \ \"price_initial\": initial,\n                    \"price_final\": final,\n\
+          \                    \"price_discount\": discount,\n                   \
+          \ \"has_price\": currency != \"\",\n                }\n\n        except\
+          \ urllib.error.HTTPError as e:\n            if e.code == 429 and attempt\
+          \ == 0:\n                time.sleep(5)\n                continue\n     \
+          \       return {**_EMPTY, \"status\": \"error\", \"message\": f\"HTTP {e.code}\"\
+          , \"info\": \"\"}\n        except urllib.error.URLError as e:\n        \
+          \    if attempt == 0:\n                time.sleep(2)\n                continue\n\
+          \            return {**_EMPTY, \"status\": \"error\", \"message\": f\"网络不通:\
+          \ {e.reason}\", \"info\": \"\"}\n        except Exception as e:\n      \
+          \      return {**_EMPTY, \"status\": \"error\", \"message\": f\"{type(e).__name__}:\
+          \ {e}\", \"info\": \"\"}\n\n    return {**_EMPTY, \"status\": \"error\"\
+          , \"message\": \"重试后仍失败\", \"info\": \"\"}"
+        code_language: python3
+        error_strategy: fail-branch
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          appid:
+            children: null
+            type: number
+          developers:
+            children: null
+            type: array[string]
+          has_price:
+            children: null
+            type: boolean
+          info:
+            children: null
+            type: string
+          message:
+            children: null
+            type: string
+          name:
+            children: null
+            type: string
+          price_currency:
+            children: null
+            type: string
+          price_discount:
+            children: null
+            type: number
+          price_final:
+            children: null
+            type: number
+          price_initial:
+            children: null
+            type: number
+          publishers:
+            children: null
+            type: array[string]
+          release_date:
+            children: null
+            type: string
+          short_desc:
+            children: null
+            type: string
+          status:
+            children: null
+            type: string
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1537
+        selected: false
+        title: Steam_请求_2
+        type: code
+        variables:
+        - value_selector:
+          - '17832360435150'
+          - appid
+          value_type: number
+          variable: appid
+      height: 117
+      id: '1783236290168'
+      parentId: '1783218214352'
+      position:
+        x: 3122
+        y: 237
+      positionAbsolute:
+        x: 3846
+        y: 237
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1783238945283'
+          - output
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_config:
+          jinja2_variables: []
+        prompt_template:
+        - edition_type: basic
+          id: b0dda669-2077-4e92-9220-28c8ca1ba998
+          role: system
+          text: "    你是一个游戏数据提取助手。根据输入内容提取游戏信息，输出两行 SQL INSERT 语句。\n\n    输出格式：\n\
+            \  INSERT INTO games (name, release_date, developer, publisher, genres,\
+            \ summary) VALUES ('游戏名', 'YYYY-MM-DD',\n  '开发商', '发行商', '类型', '简介');\n\
+            \  INSERT INTO game_prices (appid, name, currency, initial_price, final_price,\
+            \ discount_percent, recorded_at) VALUES\n  (SteamID, '游戏名', '货币', 原价,\
+            \ 现价, 折扣%, CURDATE());\n\n    规则：\n    1. 如果输入是 JSON 格式，先解析其中的 \"results\"\
+            \ 数组，提取 \"title\" 和 \"content\"\n  字段作为信息来源；优先使用标题含\"百科\"的结果\n    2. 如果输入是结构化文本（游戏名:xxx\
+            \ 格式），直接提取各字段\n    3. 从内容中提取：游戏名、发行日期、开发商、发行商、游戏类型和简介，其中游戏名严格要求是{{#1783218214352.item#}}\n\
+            \    4. 发售日期转为 YYYY-MM-DD，无法确定填 NULL\n    5. 单引号转义为两个单引号 ''\n    6. 类型根据内容推断，多个用逗号分隔\n\
+            \    7. 简介控制在 100 字以内\n    8. 价格数据提取规则（严格遵守）：\n       - 仅当输入中明确包含\"价格:\
+            \ XXX YYY (原价 ZZZ) 折扣 N%\"格式时，才生成 INSERT INTO game_prices\n       -如果输入中没有\"\
+            价格:\"这一行，或货币为空，禁止生成 INSERT INTO game_prices。不要输出空数据行。\n       - 禁止根据其他文本推断或编造价格\n\
+            \    9. 每条 INSERT 各占一行，只输出 SQL，不要有任何解释\n    10.货币代码仅允许 CNY 或 USD，禁止输出\"\
+            人民币\"\"美元\"等中文\n    11. 上下文：{{#context#}}"
+        selected: false
+        structured_output_enabled: false
+        title: Steam_生成SQL语句
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1783236960593'
+      parentId: '1783218214352'
+      position:
+        x: 4450
+        y: 286.53333333333336
+      positionAbsolute:
+        x: 5174
+        y: 286.53333333333336
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 873fada0-e039-4188-9471-376366023618
+            value: true
+            varType: boolean
+            variable_selector:
+            - '17832360435150'
+            - has_data
+          id: 'true'
+          logical_operator: and
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        selected: false
+        title: Steam_条件分支_2
+        type: if-else
+      height: 148
+      id: '1783237763648'
+      parentId: '1783218214352'
+      position:
+        x: 2780
+        y: 231.60000000000002
+      positionAbsolute:
+        x: 3504
+        y: 231.60000000000002
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        outputs:
+        - value_selector:
+          - '1783298565072'
+          - html
+          value_type: string
+          variable: output
+        - value_selector:
+          - '1783309697885'
+          - html
+          value_type: string
+          variable: output2
+        selected: false
+        title: 输出
+        type: end
+      height: 114
+      id: '1783237867371'
+      position:
+        x: 7708
+        y: 1276.1333333333334
+      positionAbsolute:
+        x: 7708
+        y: 1276.1333333333334
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        advanced_settings:
+          group_enabled: false
+          groups:
+          - groupId: 43e5195f-8048-4906-879a-ce4548e82fbf
+            group_name: Group1
+            output_type: string
+            variables:
+            - - '1783230195172'
+              - name
+            - - '1783230195172'
+              - release_date
+            - - '1783230195172'
+              - short_desc
+            - - '1783230195172'
+              - status
+            - - '1783230195172'
+              - message
+            - - '1783239065807'
+              - has_data
+            - - '1783236290168'
+              - name
+            - - '1783236290168'
+              - short_desc
+            - - '1783236290168'
+              - status
+            - - '1783236290168'
+              - message
+            - - '1783236290168'
+              - release_date
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        output_type: string
+        selected: false
+        title: Steam_变量聚合器
+        type: variable-aggregator
+        variables:
+        - - '1783236290168'
+          - info
+        - - '1783230195172'
+          - info
+        - - '1783304253320'
+          - info
+      height: 160
+      id: '1783238945283'
+      parentId: '1783218214352'
+      position:
+        x: 4128
+        y: 223.86666666666667
+      positionAbsolute:
+        x: 4852
+        y: 223.86666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import re\n\n\ndef main(outputs: list) -> dict:\n    games_values =\
+          \ []\n    games_prefix = \"\"\n    prices_values = []\n    prices_prefix\
+          \ = \"\"\n\n    for s in outputs:\n        s = s.strip()\n        if not\
+          \ s or \"SKIP\" in s:\n            continue\n\n        # 按每个 INSERT 语句拆分（用\
+          \ ; 分割后再拼回）\n        # 先按 ;\\n 或 ; 拆成多个独立的 SQL 语句\n        statements =\
+          \ re.split(r';\\s*\\n', s)\n\n        for stmt in statements:\n        \
+          \    stmt = stmt.strip()\n            if not stmt or not stmt.upper().startswith(\"\
+          INSERT\"):\n                continue\n            # 去掉可能的 ON DUPLICATE KEY\
+          \ UPDATE\n            stmt = re.sub(r\"\\s+ON\\s+DUPLICATE\\s+KEY\\s+UPDATE\\\
+          s+.*$\", \"\", stmt, flags=re.IGNORECASE |\n                           \
+          \                                                          re.DOTALL).strip()\n\
+          \            if not stmt.endswith(\";\"):\n                stmt += \";\"\
+          \n\n            m = re.match(r\"(INSERT\\s+(?:IGNORE\\s+)?INTO\\s+(\\w+)\\\
+          s*\\([^)]+\\))\\s*VALUES\\s*(\\(.+\\))\\s*;\", stmt,\n                 \
+          \        re.IGNORECASE | re.DOTALL)\n            if m:\n               \
+          \ table_name = m.group(2).lower()\n                if table_name == \"games\"\
+          :\n                    games_prefix = m.group(1)\n                    games_values.append(m.group(3))\n\
+          \                elif table_name == \"game_prices\":\n                 \
+          \   prices_prefix = m.group(1)\n                    prices_values.append(m.group(3))\n\
+          \n    games_sql = \"\"\n    prices_sql = \"\"\n    games_count = 0\n   \
+          \ prices_count = 0\n\n    if games_values:\n        prefix = re.sub(r\"\
+          INSERT\\s+IGNORE\\s+INTO\", \"INSERT INTO\", games_prefix, flags=re.IGNORECASE)\n\
+          \        games_sql = f\"{prefix} VALUES {', '.join(games_values)} ON DUPLICATE\
+          \ KEY UPDATE release_date = VALUES(release_date), developer = VALUES(developer),\
+          \ publisher = VALUES(publisher), genres = VALUES(genres),summary = VALUES(summary);\"\
+          \n        games_count = len(games_values)\n\n    if prices_values:\n   \
+          \     # 把 appid=NULL 或 appid=0 替换为 0\n        fixed_values = []\n      \
+          \  for v in prices_values:\n            v = re.sub(r'\\(\\s*NULL\\s*,',\
+          \ '(0,', v, flags=re.IGNORECASE)\n            fixed_values.append(v)\n \
+          \       prefix = re.sub(r\"INSERT\\s+IGNORE\\s+INTO\", \"INSERT INTO\",\
+          \ prices_prefix, flags=re.IGNORECASE)\n        prices_sql = f\"{prefix}\
+          \ VALUES {', '.join(fixed_values)} ON DUPLICATE KEY UPDATE initial_price\
+          \ = VALUES(initial_price), final_price = VALUES(final_price), discount_percent\
+          \ = VALUES(discount_percent);\"\n        prices_count = len(fixed_values)\n\
+          \n    return {\n        \"games_count\": games_count,\n        \"prices_count\"\
+          : prices_count,\n        \"games_sql\": games_sql,\n        \"prices_sql\"\
+          : prices_sql,\n    }"
+        code_language: python3
+        outputs:
+          games_count:
+            children: null
+            type: number
+          games_sql:
+            children: null
+            type: string
+          prices_count:
+            children: null
+            type: number
+          prices_sql:
+            children: null
+            type: string
+        selected: false
+        title: Steam_执行SQL语句
+        type: code
+        variables:
+        - value_selector:
+          - '1783218214352'
+          - output
+          value_type: array[string]
+          variable: outputs
+      height: 52
+      id: '1783297741383'
+      position:
+        x: 5576
+        y: 614
+      positionAbsolute:
+        x: 5576
+        y: 614
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: 查询所有信息
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: SELECT * FROM games ORDER BY id;
+        type: tool
+      height: 114
+      id: '1783298173866'
+      position:
+        x: 7004
+        y: 1151.4666666666667
+      positionAbsolute:
+        x: 7004
+        y: 1151.4666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\n\n\ndef main(games_data: list, prices_data: list) -> dict:\n\
+          \    \"\"\"\n    将 SQL 查询结果转换为 HTML 表格\n    支持 Dify SQL Execute 节点的多种输出格式\n\
+          \    \"\"\"\n    \n    def extract_rows(data):\n        \"\"\"递归提取数据行，兼容多种\
+          \ Dify 输出格式\"\"\"\n        rows = []\n        \n        if not data:\n \
+          \           return rows\n        \n        # 如果是列表，遍历每个元素\n        if isinstance(data,\
+          \ list):\n            for item in data:\n                rows.extend(extract_rows(item))\n\
+          \            return rows\n        \n        # 如果是字典\n        if isinstance(data,\
+          \ dict):\n            # 1. 如果有 result 字段（SQL Execute 标准输出）\n           \
+          \ if \"result\" in data:\n                result = data[\"result\"]\n  \
+          \              if isinstance(result, list):\n                    rows.extend(result)\n\
+          \                elif isinstance(result, dict):\n                    rows.append(result)\n\
+          \            # 2. 如果有 data 字段（某些版本）\n            elif \"data\" in data:\n\
+          \                data_field = data[\"data\"]\n                if isinstance(data_field,\
+          \ list):\n                    rows.extend(data_field)\n                elif\
+          \ isinstance(data_field, dict):\n                    rows.append(data_field)\n\
+          \            # 3. 如果有 text 字段（SQL 执行结果描述），忽略\n            elif \"text\"\
+          \ in data:\n                # text 是执行结果描述，不是数据，跳过\n                pass\n\
+          \            # 4. 如果字典本身看起来像一条数据记录（有 name 字段等）\n            elif \"name\"\
+          \ in data or \"appid\" in data:\n                rows.append(data)\n   \
+          \         # 5. 如果字典包含其他可能的数据字段，尝试直接提取\n            else:\n             \
+          \   # 尝试提取所有值中可能是列表的部分\n                for key, value in data.items():\n\
+          \                    if isinstance(value, list) and value:\n           \
+          \             rows.extend(extract_rows(value))\n        \n        return\
+          \ rows\n\n    # 提取游戏数据\n    games = extract_rows(games_data) if games_data\
+          \ else []\n    prices = extract_rows(prices_data) if prices_data else []\n\
+          \n    # 去重（防止重复数据）\n    unique_games = []\n    seen = set()\n    for g in\
+          \ games:\n        key = (g.get(\"name\", \"\"), g.get(\"release_date\",\
+          \ \"\"))\n        if key not in seen:\n            seen.add(key)\n     \
+          \       unique_games.append(g)\n    games = unique_games\n\n    # === 生成游戏列表\
+          \ HTML ===\n    game_cols = [\"name\", \"release_date\", \"developer\",\
+          \ \"publisher\", \"genres\", \"summary\"]\n    game_cn = [\"游戏名\", \"发售日期\"\
+          , \"开发商\", \"发行商\", \"类型\", \"简介\"]\n\n    html = \"<h3>游戏列表</h3>\"\n  \
+          \  if games:\n        html += f\"<p>共 {len(games)} 款游戏</p>\"\n        html\
+          \ += \"<table border='1' style='border-collapse:collapse;width:100%;font-size:14px;'>\"\
+          \n        html += \"<tr style='background-color:#f0f0f0;'>\"\n        html\
+          \ += \"<th>序号</th>\" + \"\".join(f\"<th style='padding:8px;text-align:left;'>{c}</th>\"\
+          \ for c in game_cn) + \"</tr>\"\n        \n        for idx, row in enumerate(games,\
+          \ 1):\n            bgcolor = \"#f9f9f9\" if idx % 2 == 0 else \"#ffffff\"\
+          \n            html += f\"<tr style='background-color:{bgcolor};'>\"\n  \
+          \          html += f\"<td style='padding:6px;'>{idx}</td>\"\n          \
+          \  for c in game_cols:\n                val = row.get(c, '')\n         \
+          \       if val is None:\n                    val = ''\n                #\
+          \ 截断过长的简介\n                if c == \"summary\" and len(str(val)) > 100:\n\
+          \                    val = str(val)[:100] + \"...\"\n                html\
+          \ += f\"<td style='padding:6px;'>{val}</td>\"\n            html += \"</tr>\"\
+          \n        html += \"</table>\"\n    else:\n        html += \"<p>暂无游戏数据</p>\"\
+          \n\n    # === 生成价格列表 HTML ===\n    price_cols = [\"name\", \"currency\"\
+          , \"initial_price\", \"final_price\", \"discount_percent\", \"recorded_at\"\
+          ]\n    price_cn = [\"游戏名\", \"货币\", \"原价\", \"现价\", \"折扣\", \"记录时间\"]\n\n\
+          \    html += \"<h3>价格记录</h3>\"\n    if prices:\n        html += f\"<p>共\
+          \ {len(prices)} 条价格记录</p>\"\n        html += \"<table border='1' style='border-collapse:collapse;width:100%;font-size:14px;'>\"\
+          \n        html += \"<tr style='background-color:#f0f0f0;'>\"\n        html\
+          \ += \"<th>序号</th>\" + \"\".join(f\"<th style='padding:8px;text-align:left;'>{c}</th>\"\
+          \ for c in price_cn) + \"</tr>\"\n        \n        for idx, row in enumerate(prices,\
+          \ 1):\n            bgcolor = \"#f9f9f9\" if idx % 2 == 0 else \"#ffffff\"\
+          \n            html += f\"<tr style='background-color:{bgcolor};'>\"\n  \
+          \          html += f\"<td style='padding:6px;'>{idx}</td>\"\n          \
+          \  for c in price_cols:\n                val = row.get(c, '')\n        \
+          \        if val is None:\n                    val = ''\n               \
+          \ if c == \"discount_percent\" and val:\n                    # 折扣显示为百分比\n\
+          \                    html += f\"<td style='padding:6px;color:green;font-weight:bold;'>{val}%</td>\"\
+          \n                elif c == \"currency\":\n                    html += f\"\
+          <td style='padding:6px;'>{val}</td>\"\n                else:\n         \
+          \           html += f\"<td style='padding:6px;'>{val}</td>\"\n         \
+          \   html += \"</tr>\"\n        html += \"</table>\"\n    else:\n       \
+          \ html += \"<p>暂无价格数据</p>\"\n\n    return {\"html\": html}"
+        code_language: python3
+        outputs:
+          html:
+            children: null
+            type: string
+        selected: false
+        title: 格式化输出
+        type: code
+        variables:
+        - value_selector:
+          - '1783298173866'
+          - json
+          value_type: array[object]
+          variable: games_data
+        - value_selector:
+          - '1783392203319'
+          - json
+          value_type: array[object]
+          variable: prices_data
+      height: 52
+      id: '1783298565072'
+      position:
+        x: 7366
+        y: 1298.4666666666667
+      positionAbsolute:
+        x: 7366
+        y: 1298.4666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Steam_游戏信息SQL 语句插入
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: '{{#1783297741383.games_sql#}}'
+        type: tool
+      height: 114
+      id: '1783302558320'
+      position:
+        x: 5938
+        y: 496.40000000000003
+      positionAbsolute:
+        x: 5938
+        y: 496.40000000000003
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\n\ndef main(raw: str) -> dict:\n    try:\n        obj =\
+          \ json.loads(raw) if isinstance(raw, str) else raw\n    except:\n      \
+          \  return {\"info\": raw if raw else \"\"}\n\n    parts = []\n    results\
+          \ = obj.get(\"results\", [])\n    for r in results[:3]:\n        title =\
+          \ r.get(\"title\", \"\")\n        content = r.get(\"content\", \"\")\n \
+          \       if content:\n            parts.append(f\"标题: {title}\\n内容: {content[:500]}\"\
+          )\n\n    return {\"info\": \"\\n\\n\".join(parts) if parts else \"\"}"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          info:
+            children: null
+            type: string
+        selected: false
+        title: Steam_数据整理
+        type: code
+        variables:
+        - value_selector:
+          - '1783218435970'
+          - body
+          value_type: string
+          variable: raw
+      height: 52
+      id: '1783304253320'
+      parentId: '1783218214352'
+      position:
+        x: 3786
+        y: 387.60833333333335
+      positionAbsolute:
+        x: 4510
+        y: 387.60833333333335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\nimport urllib.request\nimport urllib.error\nimport ssl\n\
+          import gzip\nimport re\nimport time\nimport xml.etree.ElementTree as ET\n\
+          \n\ndef main(last_run_date: str = \"\") -> dict:\n    ctx = ssl.create_default_context()\n\
+          \    ctx.check_hostname = False\n    ctx.verify_mode = ssl.CERT_NONE\n \
+          \   https_handler = urllib.request.HTTPSHandler(context=ctx)\n    proxy_handler\
+          \ = urllib.request.ProxyHandler({})\n    opener = urllib.request.build_opener(https_handler,\
+          \ proxy_handler)\n    base_headers = {\n        \"User-Agent\": \"Mozilla/5.0\
+          \ (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/120.0.0.0\
+          \ Safari/537.36\",\"Accept-Language\": \"zh-CN,zh;q=0.9\",\n    }\n\n  \
+          \  game_names = []\n    sources = []\n    error_msg = \"\"\n\n    # 来源1:\
+          \ Steam RSS 新品 (最稳定, 带appid, 2次重试)\n    for retry in range(2):\n       \
+          \ try:\n            rss_headers = {**base_headers, \"Accept\": \"application/xml,\
+          \ text/xml, */*\"}\n            req = urllib.request.Request(\n        \
+          \        \"https://store.steampowered.com/feeds/newreleases.xml?cc=cn\"\
+          ,\n                headers=rss_headers\n            )\n            with\
+          \ opener.open(req, timeout=30) as resp:\n                raw = resp.read()\n\
+          \                if resp.headers.get(\"Content-Encoding\") == \"gzip\":\n\
+          \                    raw = gzip.decompress(raw)\n                content\
+          \ = raw.decode(\"utf-8\", errors=\"ignore\")\n                root = ET.fromstring(content)\n\
+          \                for item in root.findall(\".//item\"):\n              \
+          \      title_el = item.find(\"title\")\n                    desc_el = item.find(\"\
+          description\")\n                    title_text = title_el.text if title_el\
+          \ is not None else \"\"\n                    desc_text = desc_el.text if\
+          \ desc_el is not None else \"\"\n                    appid_m = re.search(r\"\
+          /app/(\\d+)/\", desc_text)\n                    name = title_text\n    \
+          \                for prefix in [\"Now Available on Steam - \", \"Now Available\
+          \ - \"]:\n                        if name.startswith(prefix):\n        \
+          \                    name = name[len(prefix):]\n                    name\
+          \ = re.sub(r\", \\d+% off!$\", \"\", name).strip()\n                   \
+          \ if \"DLC Available\" in title_text or \"Soundtrack\" in title_text:\n\
+          \                        continue\n                    if appid_m and name\
+          \ and name not in game_names:\n                        game_names.append(name)\n\
+          \                if game_names:\n                    sources.append(\"steam_rss\"\
+          )\n                    break\n        except Exception as e:\n         \
+          \   if retry == 0:\n                time.sleep(2)\n            else:\n \
+          \               error_msg += f\"rss: {type(e).__name__}; \"\n\n    time.sleep(1)\n\
+          \n    # 来源2: Steam 热门新品 HTML\n    try:\n        html_headers = {**base_headers,\
+          \ \"Accept\": \"text/html,application/xhtml+xml\"}\n        req = urllib.request.Request(\n\
+          \            \"https://store.steampowered.com/search/?filter=popularnew&cc=cn&ndl=1\"\
+          ,\n            headers=html_headers\n        )\n        with opener.open(req,\
+          \ timeout=15) as resp:\n            raw = resp.read()\n            if resp.headers.get(\"\
+          Content-Encoding\") == \"gzip\":\n                raw = gzip.decompress(raw)\n\
+          \            html = raw.decode(\"utf-8\", errors=\"ignore\")\n         \
+          \   names = re.findall(r'<span class=\"title\">([^<]+)</span>', html)\n\
+          \            for name in names:\n                name = name.strip()\n \
+          \               if name and name not in game_names:\n                  \
+          \  game_names.append(name)\n            sources.append(\"steam_popular_new\"\
+          )\n    except Exception as e:\n        error_msg += f\"popular: {type(e).__name__};\
+          \ \"\n\n    time.sleep(1)\n\n    # 来源3: Steam Featured API\n    try:\n \
+          \       api_headers = {**base_headers, \"Accept\": \"application/json\"\
+          }\n        req = urllib.request.Request(\n            \"https://store.steampowered.com/api/featuredcategories?cc=cn\"\
+          ,\n            headers=api_headers\n        )\n        with opener.open(req,\
+          \ timeout=15) as resp:\n            raw = resp.read()\n            if resp.headers.get(\"\
+          Content-Encoding\") == \"gzip\":\n                raw = gzip.decompress(raw)\n\
+          \            data = json.loads(raw.decode(\"utf-8\"))\n            for category\
+          \ in [\"new_releases\", \"top_sellers\", \"specials\", \"coming_soon\"]:\n\
+          \                items = data.get(category, {}).get(\"items\", [])\n   \
+          \             for item in items[:3]:\n                    name = item.get(\"\
+          name\", \"\").strip()\n                    if name and name not in game_names:\n\
+          \                        game_names.append(name)\n            sources.append(\"\
+          steam_featured\")\n    except Exception as e:\n        error_msg += f\"\
+          featured: {type(e).__name__}; \"\n\n    # 来源4: Steam 即将推出 HTML\n    try:\n\
+          \        html_headers = {**base_headers, \"Accept\": \"text/html,application/xhtml+xml\"\
+          }\n        req = urllib.request.Request(\n            \"https://store.steampowered.com/search/?filter=comingsoon&cc=cn&ndl=1\"\
+          ,\n            headers=html_headers\n        )\n        with opener.open(req,\
+          \ timeout=15) as resp:\n            raw = resp.read()\n            if resp.headers.get(\"\
+          Content-Encoding\") == \"gzip\":\n                raw = gzip.decompress(raw)\n\
+          \            html = raw.decode(\"utf-8\", errors=\"ignore\")\n         \
+          \   names = re.findall(r'<span class=\"title\">([^<]+)</span>', html)\n\
+          \            for name in names[:15]:\n                name = name.strip()\n\
+          \                if name and name not in game_names:\n                 \
+          \   game_names.append(name)\n            sources.append(\"steam_coming_soon\"\
+          )\n    except Exception as e:\n        error_msg += f\"coming: {type(e).__name__};\
+          \ \"\n\n    game_names = game_names[:20]\n\n    return {\n        \"game_names\"\
+          : game_names,\n        \"count\": len(game_names),\n        \"source\":\
+          \ \"steam_\" + \"+\".join(sources) if sources else \"steam_none\",\n   \
+          \     \"error\": error_msg,\n    }"
+        code_language: python3
+        error_strategy: fail-branch
+        outputs:
+          count:
+            children: null
+            type: number
+          error:
+            children: null
+            type: string
+          game_names:
+            children: null
+            type: array[string]
+          source:
+            children: null
+            type: string
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: steam 搜索
+        type: code
+        variables: []
+      height: 117
+      id: '1783308516937'
+      position:
+        x: 362
+        y: 697.1
+      positionAbsolute:
+        x: 362
+        y: 697.1
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\nimport re\nfrom datetime import datetime, timezone, timedelta\n\
+          \n\ndef main(steam_count=None, steam_source: str = \"\", steam_sql: str\
+          \ = \"\",\n         epic_count=None, epic_source: str = \"\", epic_sql:\
+          \ str = \"\",\n         steam_prices_sql: str = \"\", epic_prices_sql: str\
+          \ = \"\") -> dict:\n    now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8))).strftime(\"\
+          %Y-%m-%d %H:%M:%S\")\n\n    steam_count = steam_count or 0\n    epic_count\
+          \ = epic_count or 0\n\n    def get_affected(sql_result):\n        if not\
+          \ sql_result:\n            return 0\n        try:\n            text = \"\
+          \"\n            if isinstance(sql_result, str):\n                try:\n\
+          \                    sr = json.loads(sql_result)\n                    text\
+          \ = sr.get(\"text\", \"\")\n                except:\n                  \
+          \  text = sql_result\n            else:\n                text = sql_result.get(\"\
+          text\", \"\")\n            m = re.search(r\"Affected rows:\\s*(\\d+)\",\
+          \ text)\n            return int(m.group(1)) if m else 0\n        except:\n\
+          \            return 0\n\n    steam_games_affected = get_affected(steam_sql)\n\
+          \    steam_prices_affected = get_affected(steam_prices_sql)\n    epic_games_affected\
+          \ = get_affected(epic_sql)\n    epic_prices_affected = get_affected(epic_prices_sql)\n\
+          \n    steam_total = steam_games_affected + steam_prices_affected\n    epic_total\
+          \ = epic_games_affected + epic_prices_affected\n    total_discovery = steam_count\
+          \ + epic_count\n    total_affected = steam_total + epic_total\n\n    sources\
+          \ = []\n    if steam_count > 0:\n        sources.append(steam_source)\n\
+          \    if epic_count > 0:\n        sources.append(epic_source)\n\n    html\
+          \ = f\"\"\"\n<h2>游戏数据同步日报</h2>\n<table border='1' style='border-collapse:collapse;width:500px'>\n\
+          \  <tr><td>执行时间</td><td>{now}</td></tr>\n  <tr><td>数据来源</td><td>{', '.join(sources)\
+          \ if sources else '无'}</td></tr>\n  <tr><td>Steam</td><td>发现 {steam_count}\
+          \ 款 / 游戏入库 {steam_games_affected} 行 / 价格入库 {steam_prices_affected}\n行</td></tr>\n\
+          \  <tr><td>Epic</td><td>发现 {epic_count} 款 / 游戏入库 {epic_games_affected} 行\
+          \ / 价格入库 {epic_prices_affected}\n行</td></tr>\n  <tr><td>合计</td><td>发现 {total_discovery}\
+          \ 款 / 入库 {total_affected} 行</td></tr>\n</table>\n    \"\"\".strip()\n\n\
+          \    summary = (\n        \n        f\"Steam: 发现{steam_count}款 / 游戏入库{steam_games_affected}行\
+          \ / 价格入库{steam_prices_affected}行\\n\"\n        f\"Epic: 发现{epic_count}款\
+          \ / 游戏入库{epic_games_affected}行 / 价格入库{epic_prices_affected}行\\n\"\n    \
+          \    f\"合计: 发现{total_discovery}款 / 入库{total_affected}行\"\n    )\n\n    return\
+          \ {\n        \"html\": html,\n        \"summary\": summary,\n        \"\
+          discovery_count\": total_discovery,\n        \"affected_rows\": total_affected,\n\
+          \    }"
+        code_language: python3
+        outputs:
+          affected_rows:
+            children: null
+            type: number
+          discovery_count:
+            children: null
+            type: number
+          html:
+            children: null
+            type: string
+          summary:
+            children: null
+            type: string
+        selected: false
+        title: 报告生成
+        type: code
+        variables:
+        - value_selector:
+          - '1783302558320'
+          - text
+          value_type: string
+          variable: steam_sql
+        - value_selector:
+          - '1783308516937'
+          - count
+          value_type: number
+          variable: steam_count
+        - value_selector:
+          - '1783308516937'
+          - source
+          value_type: string
+          variable: steam_source
+        - value_selector:
+          - '1783327914930'
+          - count
+          value_type: number
+          variable: epic_count
+        - value_selector:
+          - '1783327914930'
+          - source
+          value_type: string
+          variable: epic_source
+        - value_selector:
+          - '17833285727700'
+          - text
+          value_type: string
+          variable: epic_sql
+        - value_selector:
+          - '1783384943521'
+          - text
+          value_type: string
+          variable: steam_prices_sql
+        - value_selector:
+          - '1783384817562'
+          - text
+          value_type: string
+          variable: epic_prices_sql
+      height: 52
+      id: '1783309697885'
+      position:
+        x: 6300
+        y: 1260.4
+      positionAbsolute:
+        x: 6300
+        y: 1260.4
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\nimport urllib.request\nimport ssl\nfrom datetime import\
+          \ datetime, timezone, timedelta\n\n\ndef main(summary: str = \"\", steam_games:\
+          \ str = \"\", epic_games: str = \"\", webhook_key: str =\n\"31aeb7ca-7aed-4767-8826-9cba80664379\"\
+          , **_kwargs) -> dict:\n    if not webhook_key:\n        return {\"status\"\
+          : \"skipped\", \"message\": \"未配置 webhook_key\"}\n\n    url = f\"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={webhook_key}\"\
+          \n\n    all_games = []\n    for src in [steam_games, epic_games]:\n    \
+          \    if src:\n            try:\n                if isinstance(src, str):\n\
+          \                    names = json.loads(src)\n                else:\n  \
+          \                  names = src\n                all_games.extend(names)\n\
+          \            except:\n                pass\n\n    if all_games:\n      \
+          \  games_lines = \"\\n\".join(f\"{i}. {g}\" for i, g in enumerate(all_games[:30],\
+          \ 1))\n    else:\n        games_lines = \"无\"\n\n    push_time = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8))).strftime(\"\
+          %Y-%m-%d %H:%M:%S\")\n\n    content = (\n        f\"## 游戏数据同步日报\\n\"\n \
+          \       f\"**推送时间**：{push_time}\\n\"\n        f\"{summary}\\n\"\n      \
+          \  f\"\\n**本次游戏**：\\n\"\n        f\"{games_lines}\"\n    )\n\n    body =\
+          \ {\"msgtype\": \"markdown\", \"markdown\": {\"content\": content}}\n\n\
+          \    ctx = ssl.create_default_context()\n    ctx.check_hostname = False\n\
+          \    ctx.verify_mode = ssl.CERT_NONE\n    handler = urllib.request.HTTPSHandler(context=ctx)\n\
+          \    opener = urllib.request.build_opener(handler)\n\n    try:\n       \
+          \ data = json.dumps(body).encode(\"utf-8\")\n        req = urllib.request.Request(url,\
+          \ data=data, headers={\"Content-Type\": \"application/json\"}, method=\"\
+          POST\")\n        with opener.open(req, timeout=15) as resp:\n          \
+          \  resp_body = resp.read().decode(\"utf-8\")\n    except Exception as e:\n\
+          \        return {\"status\": \"error\", \"message\": str(e)}\n\n    return\
+          \ {\"status\": \"success\", \"message\": resp_body}"
+        code_language: python3
+        outputs:
+          message:
+            children: null
+            type: string
+          status:
+            children: null
+            type: string
+        selected: false
+        title: 消息推送
+        type: code
+        variables:
+        - value_selector:
+          - '1783309697885'
+          - summary
+          value_type: string
+          variable: summary
+        - value_selector:
+          - '1783308516937'
+          - game_names
+          value_type: array[string]
+          variable: steam_games
+        - value_selector:
+          - '1783327914930'
+          - game_names
+          value_type: array[string]
+          variable: epic_games
+      height: 52
+      id: '1783311852175'
+      position:
+        x: 6642
+        y: 1269.0666666666666
+      positionAbsolute:
+        x: 6642
+        y: 1269.0666666666666
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(item: str) -> dict:\n    escaped = item.replace(\"'\", \"\
+          ''\")\n    return {\"game_name\": escaped}"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          game_name:
+            children: null
+            type: string
+        selected: false
+        title: Steam_引号修复_1
+        type: code
+        variables:
+        - value_selector:
+          - '1783218214352'
+          - item
+          value_type: string
+          variable: item
+      height: 52
+      id: '1783320691282'
+      parentId: '1783218214352'
+      position:
+        x: 184
+        y: 84.95833333333336
+      positionAbsolute:
+        x: 908
+        y: 84.95833333333336
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        outputs:
+        - value_selector:
+          - '1783327914930'
+          - error_message
+          value_type: string
+          variable: Steam_error
+        - value_selector:
+          - '1783327914930'
+          - error_message
+          value_type: string
+          variable: Epic_error
+        selected: false
+        title: 输出 2
+        type: end
+      height: 114
+      id: '1783322121978'
+      position:
+        x: 724
+        y: 1040
+      positionAbsolute:
+        x: 724
+        y: 1040
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(item: str) -> dict:\n    escaped = item.replace(\"'\", \"\
+          ''\")\n    return {\"game_name\": escaped}"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1783218214352'
+        outputs:
+          game_name:
+            children: null
+            type: string
+        selected: false
+        title: Steam_引号修复_2
+        type: code
+        variables:
+        - value_selector:
+          - '1783226658133'
+          - text
+          value_type: string
+          variable: item
+      height: 52
+      id: '1783325063261'
+      parentId: '1783218214352'
+      position:
+        x: 1814
+        y: 243.26666666666665
+      positionAbsolute:
+        x: 2538
+        y: 243.26666666666665
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\nimport urllib.request\nimport urllib.error\nimport ssl\n\
+          \n\ndef main(last_run_date: str = \"\") -> dict:\n    ctx = ssl.create_default_context()\n\
+          \    ctx.check_hostname = False\n    ctx.verify_mode = ssl.CERT_NONE\n \
+          \   https_handler = urllib.request.HTTPSHandler(context=ctx)\n    proxy_handler\
+          \ = urllib.request.ProxyHandler({})\n    opener = urllib.request.build_opener(https_handler,\
+          \ proxy_handler)\n\n    game_names = []\n    error_msg = \"\"\n\n    try:\n\
+          \        url = \"https://store-site-backend-static-ipv4.ak.epicgames.com/freeGamesPromotions\"\
+          \n        req = urllib.request.Request(url, headers={\n            \"User-Agent\"\
+          : \"Mozilla/5.0\"\n        })\n        with opener.open(req, timeout=20)\
+          \ as resp:\n            data = json.loads(resp.read().decode(\"utf-8\"))\n\
+          \            elements = data.get(\"data\", {}).get(\"Catalog\", {}).get(\"\
+          searchStore\", {}).get(\"elements\", [])\n            for game in elements:\n\
+          \                name = game.get(\"title\", \"\").strip()\n            \
+          \    if name and name not in game_names:\n                    game_names.append(name)\n\
+          \    except Exception as e:\n        error_msg = f\"{type(e).__name__}:\
+          \ {e}\"\n\n    return {\n        \"game_names\": game_names[:10],\n    \
+          \    \"count\": len(game_names[:10]),\n        \"source\": \"epic_free\"\
+          ,\n        \"error\": error_msg,\n    }"
+        code_language: python3
+        error_strategy: fail-branch
+        outputs:
+          count:
+            children: null
+            type: number
+          error:
+            children: null
+            type: string
+          game_names:
+            children: null
+            type: array[string]
+          source:
+            children: null
+            type: string
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Epic 搜索
+        type: code
+        variables: []
+      height: 117
+      id: '1783327914930'
+      position:
+        x: 362
+        y: 1333.1
+      positionAbsolute:
+        x: 362
+        y: 1333.1
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 960
+        isInIteration: false
+        isInLoop: false
+        is_parallel: false
+        iterator_input_type: array[string]
+        iterator_selector:
+        - '1783327914930'
+        - game_names
+        output_selector:
+        - '1783328406639017833284066409'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1783328406639start
+        title: Epic 迭代
+        type: iteration
+        width: 4752
+      height: 960
+      id: '17833284066390'
+      position:
+        x: 724
+        y: 1234
+      positionAbsolute:
+        x: 724
+        y: 1234
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 4752
+      zIndex: 1
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-2341
+            key: ''
+            type: text
+            value: '{"query": "{{{#17833284066390.item#}}} 游戏 发行日期 开发商 简介", "search_depth":
+              "basic"}'
+          type: json
+        desc: ''
+        headers: 'Authorization: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
+
+          Content-Type:application/json'
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        method: post
+        params: format:json
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 'Epic_HTTP 请求 '
+        type: http-request
+        url: https://api.tavily.com/search
+        variables: []
+      height: 137
+      id: '1783328406639017833284066400'
+      parentId: '17833284066390'
+      position:
+        x: 3464
+        y: 254.25833333333333
+      positionAbsolute:
+        x: 4188
+        y: 1488.2583333333332
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        is_team_authorization: true
+        iteration_id: '17833284066390'
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Epic_id 查询
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: ''
+          query:
+            type: mixed
+            value: SELECT appid FROM steam_appid_map WHERE name = '{{#17833284066390178332840664013.game_name#}}'
+        type: tool
+      height: 114
+      id: '1783328406639017833284066401'
+      parentId: '17833284066390'
+      position:
+        x: 506
+        y: 60
+      positionAbsolute:
+        x: 1230
+        y: 1294
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 0280f3d5-14df-4f63-9e54-7489a4c89566
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1783328406639017833284066405'
+            - has_data
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        selected: false
+        title: Epic_条件分支_1
+        type: if-else
+      height: 148
+      id: '1783328406639017833284066402'
+      parentId: '17833284066390'
+      position:
+        x: 1150
+        y: 70.66666666666666
+      positionAbsolute:
+        x: 1874
+        y: 1304.6666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '17833284066390'
+          - item
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3-max
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 2146171b-2b51-482a-b70a-b61a7aba16bc
+          role: system
+          text: '你是一个翻译机器人，需要将{{#17833284066390.item#}}游戏名字翻译成英文
+
+            输出格式为字符串'
+        selected: false
+        structured_output_enabled: false
+        title: Epic_LLM 翻译
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1783328406639017833284066403'
+      parentId: '17833284066390'
+      position:
+        x: 1492
+        y: 226.66666666666669
+      positionAbsolute:
+        x: 2216
+        y: 1460.6666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        is_team_authorization: true
+        iteration_id: '17833284066390'
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Epic_重新查询
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: SELECT appid FROM steam_appid_map WHERE name = '{{#17833284066390178332840664014.game_name#}}'
+        type: tool
+      height: 114
+      id: '1783328406639017833284066404'
+      parentId: '17833284066390'
+      position:
+        x: 2136
+        y: 237
+      positionAbsolute:
+        x: 2860
+        y: 1471
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(sql_output: list) -> dict:\n    \"\"\"\n    从 SQL 查询结果中提取\
+          \ appid 和 name\n    输入格式: [{\"result\": [{\"appid\": 730}]}]\n    \"\"\"\
+          \n    try:\n        # sql_output 是一个数组，取第一个元素\n        if not sql_output\
+          \ or len(sql_output) == 0:\n            return {\n                \"appid\"\
+          : None,\n                \"name\": None,\n                \"has_data\":\
+          \ False\n            }\n        \n        # 取第一个元素\n        first_item =\
+          \ sql_output[0]\n        \n        # 获取 result 数组\n        result = first_item.get(\"\
+          result\", [])\n        \n        # 判断是否有数据\n        has_data = len(result)\
+          \ > 0\n        \n        # 提取数据\n        appid = None\n        name = None\n\
+          \        \n        if has_data:\n            game_data = result[0]\n   \
+          \         appid = game_data.get(\"appid\")\n            name = game_data.get(\"\
+          name\")\n        \n        return {\n            \"appid\": appid,\n   \
+          \         \"name\": name,\n            \"has_data\": has_data\n        }\n\
+          \        \n    except Exception as e:\n        return {\n            \"\
+          appid\": None,\n            \"name\": None,\n            \"has_data\": False,\n\
+          \            \"error\": str(e)\n        }"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          appid:
+            children: null
+            type: number
+          has_data:
+            children: null
+            type: boolean
+          name:
+            children: null
+            type: string
+        selected: false
+        title: Epic_格式转换_1
+        type: code
+        variables:
+        - value_selector:
+          - '1783328406639017833284066401'
+          - json
+          value_type: array[object]
+          variable: sql_output
+      height: 52
+      id: '1783328406639017833284066405'
+      parentId: '17833284066390'
+      position:
+        x: 828
+        y: 110
+      positionAbsolute:
+        x: 1552
+        y: 1344
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\nimport time\nimport random\nimport urllib.request\nimport\
+          \ urllib.error\nimport ssl\nimport gzip\n\n_EMPTY = {\n    \"name\": \"\"\
+          ,\n    \"appid\": 0,\n    \"developers\": [],\n    \"publishers\": [],\n\
+          \    \"short_desc\": \"\",\n    \"release_date\": \"\",\n    \"status\"\
+          : \"\",\n    \"message\": \"\",\n    \"info\": \"\",\n    \"price_currency\"\
+          : \"\",\n    \"price_initial\": 0,\n    \"price_final\": 0,\n    \"price_discount\"\
+          : 0,\n    \"has_price\": False,\n}\n\n\ndef main(appid: int) -> dict:\n\
+          \    time.sleep(random.uniform(2, 5))\n\n    url = f\"https://store.steampowered.com/api/appdetails?appids={appid}&cc=cn\"\
+          \n    headers = {\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0;\
+          \ Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\
+          ,\n        \"Accept\": \"application/json\",\n        \"Accept-Language\"\
+          : \"zh-CN,zh;q=0.9\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n\
+          \    }\n\n    ctx = ssl.create_default_context()\n    ctx.check_hostname\
+          \ = False\n    ctx.verify_mode = ssl.CERT_NONE\n\n    https_handler = urllib.request.HTTPSHandler(context=ctx)\n\
+          \    proxy_handler = urllib.request.ProxyHandler({})\n    opener = urllib.request.build_opener(https_handler,\
+          \ proxy_handler)\n\n    for attempt in range(2):\n        try:\n       \
+          \     req = urllib.request.Request(url, headers=headers)\n            with\
+          \ opener.open(req, timeout=40) as resp:\n                raw = resp.read()\n\
+          \                if resp.headers.get(\"Content-Encoding\") == \"gzip\":\n\
+          \                    raw = gzip.decompress(raw)\n                full =\
+          \ json.loads(raw.decode(\"utf-8\"))\n                game = full[str(appid)]\n\
+          \                if not game.get(\"success\"):\n                    return\
+          \ {**_EMPTY, \"status\": \"error\", \"message\": \"游戏未找到\"}\n          \
+          \      d = game[\"data\"]\n                devs = d.get(\"developers\")\
+          \ or []\n                pubs = d.get(\"publishers\") or []\n\n        \
+          \        # 提取价格信息 (Steam 价格单位是\"分\"，除以100)\n                price_info =\
+          \ d.get(\"price_overview\") or {}\n                currency = price_info.get(\"\
+          currency\", \"\")\n                initial = round(price_info.get(\"initial\"\
+          , 0) / 100, 2)\n                final = round(price_info.get(\"final\",\
+          \ 0) / 100, 2)\n                discount = price_info.get(\"discount_percent\"\
+          , 0)\n\n                info = (\n                    f\"游戏名: {d.get('name',\
+          \ '')}\\n\"\n                    f\"Steam ID: {d.get('steam_appid', '')}\\\
+          n\"\n                    f\"开发商: {', '.join(devs)}\\n\"\n              \
+          \      f\"发行商: {', '.join(pubs)}\\n\"\n                    f\"发售日期: {d.get('release_date',\
+          \ {}).get('date', '')}\\n\"\n                    f\"价格: {currency} {final}\
+          \ (原价 {initial}) 折扣 {discount}%\\n\"\n                    f\"简介: {d.get('short_description',\
+          \ '')}\"\n                )\n                return {\n                \
+          \    \"name\": d.get(\"name\"),\n                    \"appid\": d.get(\"\
+          steam_appid\"),\n                    \"developers\": devs,\n           \
+          \         \"publishers\": pubs,\n                    \"short_desc\": d.get(\"\
+          short_description\"),\n                    \"release_date\": d.get(\"release_date\"\
+          , {}).get(\"date\"),\n                    \"status\": \"success\",\n   \
+          \                 \"message\": \"\",\n                    \"info\": info,\n\
+          \                    \"price_currency\": currency,\n                   \
+          \ \"price_initial\": initial,\n                    \"price_final\": final,\n\
+          \                    \"price_discount\": discount,\n                   \
+          \ \"has_price\": currency != \"\",\n                }\n\n        except\
+          \ urllib.error.HTTPError as e:\n            if e.code == 429 and attempt\
+          \ == 0:\n                time.sleep(5)\n                continue\n     \
+          \       return {**_EMPTY, \"status\": \"error\", \"message\": f\"HTTP {e.code}\"\
+          , \"info\": \"\"}\n        except urllib.error.URLError as e:\n        \
+          \    if attempt == 0:\n                time.sleep(2)\n                continue\n\
+          \            return {**_EMPTY, \"status\": \"error\", \"message\": f\"网络不通:\
+          \ {e.reason}\", \"info\": \"\"}\n        except Exception as e:\n      \
+          \      return {**_EMPTY, \"status\": \"error\", \"message\": f\"{type(e).__name__}:\
+          \ {e}\", \"info\": \"\"}\n\n    return {**_EMPTY, \"status\": \"error\"\
+          , \"message\": \"重试后仍失败\", \"info\": \"\"}"
+        code_language: python3
+        desc: ''
+        error_strategy: fail-branch
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          appid:
+            children: null
+            type: number
+          developers:
+            children: null
+            type: array[string]
+          has_price:
+            children: null
+            type: boolean
+          info:
+            children: null
+            type: string
+          message:
+            children: null
+            type: string
+          name:
+            children: null
+            type: string
+          price_currency:
+            children: null
+            type: string
+          price_discount:
+            children: null
+            type: number
+          price_final:
+            children: null
+            type: number
+          price_initial:
+            children: null
+            type: number
+          publishers:
+            children: null
+            type: array[string]
+          release_date:
+            children: null
+            type: string
+          short_desc:
+            children: null
+            type: string
+          status:
+            children: null
+            type: string
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 1566
+        selected: false
+        title: Epic 请求_1
+        type: code
+        variables:
+        - value_selector:
+          - '1783328406639017833284066405'
+          - appid
+          value_type: number
+          variable: appid
+      height: 117
+      id: '1783328406639017833284066406'
+      parentId: '17833284066390'
+      position:
+        x: 3122
+        y: 80.48333333333332
+      positionAbsolute:
+        x: 3846
+        y: 1314.4833333333333
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(sql_output: list) -> dict:\n    \"\"\"\n    从 SQL 查询结果中提取\
+          \ appid 和 name\n    输入格式: [{\"result\": [{\"appid\": 730}]}]\n    \"\"\"\
+          \n    try:\n        # sql_output 是一个数组，取第一个元素\n        if not sql_output\
+          \ or len(sql_output) == 0:\n            return {\n                \"appid\"\
+          : None,\n                \"name\": None,\n                \"has_data\":\
+          \ False\n            }\n        \n        # 取第一个元素\n        first_item =\
+          \ sql_output[0]\n        \n        # 获取 result 数组\n        result = first_item.get(\"\
+          result\", [])\n        \n        # 判断是否有数据\n        has_data = len(result)\
+          \ > 0\n        \n        # 提取数据\n        appid = None\n        name = None\n\
+          \        \n        if has_data:\n            game_data = result[0]\n   \
+          \         appid = game_data.get(\"appid\")\n            name = game_data.get(\"\
+          name\")\n        \n        return {\n            \"appid\": appid,\n   \
+          \         \"name\": name,\n            \"has_data\": has_data\n        }\n\
+          \        \n    except Exception as e:\n        return {\n            \"\
+          appid\": None,\n            \"name\": None,\n            \"has_data\": False,\n\
+          \            \"error\": str(e)\n        }"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          appid:
+            children: null
+            type: number
+          has_data:
+            children: null
+            type: boolean
+          name:
+            children: null
+            type: string
+        selected: false
+        title: Epic_格式转换_2
+        type: code
+        variables:
+        - value_selector:
+          - '1783328406639017833284066404'
+          - json
+          value_type: array[object]
+          variable: sql_output
+      height: 52
+      id: '1783328406639017833284066407'
+      parentId: '17833284066390'
+      position:
+        x: 2458
+        y: 287
+      positionAbsolute:
+        x: 3182
+        y: 1521
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\nimport time\nimport random\nimport urllib.request\nimport\
+          \ urllib.error\nimport ssl\nimport gzip\n\n_EMPTY = {\n    \"name\": \"\"\
+          ,\n    \"appid\": 0,\n    \"developers\": [],\n    \"publishers\": [],\n\
+          \    \"short_desc\": \"\",\n    \"release_date\": \"\",\n    \"status\"\
+          : \"\",\n    \"message\": \"\",\n    \"info\": \"\",\n    \"price_currency\"\
+          : \"\",\n    \"price_initial\": 0,\n    \"price_final\": 0,\n    \"price_discount\"\
+          : 0,\n    \"has_price\": False,\n}\n\n\ndef main(appid: int) -> dict:\n\
+          \    time.sleep(random.uniform(2, 5))\n\n    url = f\"https://store.steampowered.com/api/appdetails?appids={appid}&cc=cn\"\
+          \n    headers = {\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0;\
+          \ Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\
+          ,\n        \"Accept\": \"application/json\",\n        \"Accept-Language\"\
+          : \"zh-CN,zh;q=0.9\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n\
+          \    }\n\n    ctx = ssl.create_default_context()\n    ctx.check_hostname\
+          \ = False\n    ctx.verify_mode = ssl.CERT_NONE\n\n    https_handler = urllib.request.HTTPSHandler(context=ctx)\n\
+          \    proxy_handler = urllib.request.ProxyHandler({})\n    opener = urllib.request.build_opener(https_handler,\
+          \ proxy_handler)\n\n    for attempt in range(2):\n        try:\n       \
+          \     req = urllib.request.Request(url, headers=headers)\n            with\
+          \ opener.open(req, timeout=40) as resp:\n                raw = resp.read()\n\
+          \                if resp.headers.get(\"Content-Encoding\") == \"gzip\":\n\
+          \                    raw = gzip.decompress(raw)\n                full =\
+          \ json.loads(raw.decode(\"utf-8\"))\n                game = full[str(appid)]\n\
+          \                if not game.get(\"success\"):\n                    return\
+          \ {**_EMPTY, \"status\": \"error\", \"message\": \"游戏未找到\"}\n          \
+          \      d = game[\"data\"]\n                devs = d.get(\"developers\")\
+          \ or []\n                pubs = d.get(\"publishers\") or []\n\n        \
+          \        # 提取价格信息 (Steam 价格单位是\"分\"，除以100)\n                price_info =\
+          \ d.get(\"price_overview\") or {}\n                currency = price_info.get(\"\
+          currency\", \"\")\n                initial = round(price_info.get(\"initial\"\
+          , 0) / 100, 2)\n                final = round(price_info.get(\"final\",\
+          \ 0) / 100, 2)\n                discount = price_info.get(\"discount_percent\"\
+          , 0)\n\n                info = (\n                    f\"游戏名: {d.get('name',\
+          \ '')}\\n\"\n                    f\"Steam ID: {d.get('steam_appid', '')}\\\
+          n\"\n                    f\"开发商: {', '.join(devs)}\\n\"\n              \
+          \      f\"发行商: {', '.join(pubs)}\\n\"\n                    f\"发售日期: {d.get('release_date',\
+          \ {}).get('date', '')}\\n\"\n                    f\"价格: {currency} {final}\
+          \ (原价 {initial}) 折扣 {discount}%\\n\"\n                    f\"简介: {d.get('short_description',\
+          \ '')}\"\n                )\n                return {\n                \
+          \    \"name\": d.get(\"name\"),\n                    \"appid\": d.get(\"\
+          steam_appid\"),\n                    \"developers\": devs,\n           \
+          \         \"publishers\": pubs,\n                    \"short_desc\": d.get(\"\
+          short_description\"),\n                    \"release_date\": d.get(\"release_date\"\
+          , {}).get(\"date\"),\n                    \"status\": \"success\",\n   \
+          \                 \"message\": \"\",\n                    \"info\": info,\n\
+          \                    \"price_currency\": currency,\n                   \
+          \ \"price_initial\": initial,\n                    \"price_final\": final,\n\
+          \                    \"price_discount\": discount,\n                   \
+          \ \"has_price\": currency != \"\",\n                }\n\n        except\
+          \ urllib.error.HTTPError as e:\n            if e.code == 429 and attempt\
+          \ == 0:\n                time.sleep(5)\n                continue\n     \
+          \       return {**_EMPTY, \"status\": \"error\", \"message\": f\"HTTP {e.code}\"\
+          , \"info\": \"\"}\n        except urllib.error.URLError as e:\n        \
+          \    if attempt == 0:\n                time.sleep(2)\n                continue\n\
+          \            return {**_EMPTY, \"status\": \"error\", \"message\": f\"网络不通:\
+          \ {e.reason}\", \"info\": \"\"}\n        except Exception as e:\n      \
+          \      return {**_EMPTY, \"status\": \"error\", \"message\": f\"{type(e).__name__}:\
+          \ {e}\", \"info\": \"\"}\n\n    return {**_EMPTY, \"status\": \"error\"\
+          , \"message\": \"重试后仍失败\", \"info\": \"\"}"
+        code_language: python3
+        desc: ''
+        error_strategy: fail-branch
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          appid:
+            children: null
+            type: number
+          developers:
+            children: null
+            type: array[string]
+          has_price:
+            children: null
+            type: boolean
+          info:
+            children: null
+            type: string
+          message:
+            children: null
+            type: string
+          name:
+            children: null
+            type: string
+          price_currency:
+            children: null
+            type: string
+          price_discount:
+            children: null
+            type: number
+          price_final:
+            children: null
+            type: number
+          price_initial:
+            children: null
+            type: number
+          publishers:
+            children: null
+            type: array[string]
+          release_date:
+            children: null
+            type: string
+          short_desc:
+            children: null
+            type: string
+          status:
+            children: null
+            type: string
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1537
+        selected: false
+        title: Epic 请求_2
+        type: code
+        variables:
+        - value_selector:
+          - '1783328406639017833284066407'
+          - appid
+          value_type: number
+          variable: appid
+      height: 117
+      id: '1783328406639017833284066408'
+      parentId: '17833284066390'
+      position:
+        x: 3122
+        y: 277.9666666666667
+      positionAbsolute:
+        x: 3846
+        y: 1511.9666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1783386106120'
+          - output
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_config:
+          jinja2_variables: []
+        prompt_template:
+        - edition_type: basic
+          id: b0dda669-2077-4e92-9220-28c8ca1ba998
+          role: system
+          text: "    你是一个游戏数据提取助手。根据输入内容提取游戏信息，输出两行 SQL INSERT 语句。\n\n    输出格式：\n\
+            \  INSERT INTO games (name, release_date, developer, publisher, genres,\
+            \ summary) VALUES ('游戏名', 'YYYY-MM-DD',\n  '开发商', '发行商', '类型', '简介');\n\
+            \  INSERT INTO game_prices (appid, name, currency, initial_price, final_price,\
+            \ discount_percent, recorded_at) VALUES\n  (SteamID, '游戏名', '货币', 原价,\
+            \ 现价, 折扣%, CURDATE());\n\n    规则：\n    1. 如果输入是 JSON 格式，先解析其中的 \"results\"\
+            \ 数组，提取 \"title\" 和 \"content\"\n  字段作为信息来源；优先使用标题含\"百科\"的结果\n    2. 如果输入是结构化文本（游戏名:xxx\
+            \ 格式），直接提取各字段\n    3. 从内容中提取：游戏名、发行日期、开发商、发行商、游戏类型和简介，其中游戏名严格要求是{{#17833284066390.item#}}\n\
+            \    4. 发售日期转为 YYYY-MM-DD，无法确定填 NULL\n    5. 单引号转义为两个单引号 ''\n    6. 类型根据内容推断，多个用逗号分隔\n\
+            \    7. 简介控制在 100 字以内\n    8. 价格数据提取规则（严格遵守）：\n       - 仅当输入中明确包含\"价格:\
+            \ XXX YYY (原价 ZZZ) 折扣 N%\"格式时，才生成 INSERT INTO game_prices\n       -如果输入中没有\"\
+            价格:\"这一行，或货币为空，禁止生成 INSERT INTO game_prices。不要输出空数据行。\n       - 禁止根据其他文本推断或编造价格\n\
+            \    9. 每条 INSERT 各占一行，只输出 SQL，不要有任何解释\n    10.货币代码仅允许 CNY 或 USD，禁止输出\"\
+            人民币\"\"美元\"等中文\n    11. 上下文：{{#context#}}"
+        selected: false
+        structured_output_enabled: false
+        title: 'Epic_生成SQL语句 '
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1783328406639017833284066409'
+      parentId: '17833284066390'
+      position:
+        x: 4450
+        y: 322.26666666666665
+      positionAbsolute:
+        x: 5174
+        y: 1556.2666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 873fada0-e039-4188-9471-376366023618
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1783328406639017833284066407'
+            - has_data
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        selected: false
+        title: Epic_条件分支_2
+        type: if-else
+      height: 148
+      id: '17833284066390178332840664010'
+      parentId: '17833284066390'
+      position:
+        x: 2780
+        y: 247.66666666666669
+      positionAbsolute:
+        x: 3504
+        y: 1481.6666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import json\n\ndef main(raw: str) -> dict:\n    try:\n        obj =\
+          \ json.loads(raw) if isinstance(raw, str) else raw\n    except:\n      \
+          \  return {\"info\": raw if raw else \"\"}\n\n    parts = []\n    results\
+          \ = obj.get(\"results\", [])\n    for r in results[:3]:\n        title =\
+          \ r.get(\"title\", \"\")\n        content = r.get(\"content\", \"\")\n \
+          \       if content:\n            parts.append(f\"标题: {title}\\n内容: {content[:500]}\"\
+          )\n\n    return {\"info\": \"\\n\\n\".join(parts) if parts else \"\"}"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          info:
+            children: null
+            type: string
+        selected: false
+        title: Epic_数据整理
+        type: code
+        variables:
+        - value_selector:
+          - '1783328406639017833284066400'
+          - body
+          value_type: string
+          variable: raw
+      height: 52
+      id: '17833284066390178332840664012'
+      parentId: '17833284066390'
+      position:
+        x: 3786
+        y: 319.5916666666667
+      positionAbsolute:
+        x: 4510
+        y: 1553.5916666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(item: str) -> dict:\n    escaped = item.replace(\"'\", \"\
+          ''\")\n    return {\"game_name\": escaped}"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          game_name:
+            children: null
+            type: string
+        selected: false
+        title: Epic_引号修复_1
+        type: code
+        variables:
+        - value_selector:
+          - '17833284066390'
+          - item
+          value_type: string
+          variable: item
+      height: 52
+      id: '17833284066390178332840664013'
+      parentId: '17833284066390'
+      position:
+        x: 184
+        y: 82.33333333333334
+      positionAbsolute:
+        x: 908
+        y: 1316.3333333333333
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(item: str) -> dict:\n    escaped = item.replace(\"'\", \"\
+          ''\")\n    return {\"game_name\": escaped}"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        outputs:
+          game_name:
+            children: null
+            type: string
+        selected: false
+        title: Epic_引号修复_2
+        type: code
+        variables:
+        - value_selector:
+          - '1783328406639017833284066403'
+          - text
+          value_type: string
+          variable: item
+      height: 52
+      id: '17833284066390178332840664014'
+      parentId: '17833284066390'
+      position:
+        x: 1814
+        y: 259.33333333333337
+      positionAbsolute:
+        x: 2538
+        y: 1493.3333333333335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1783328406639start
+      parentId: '17833284066390'
+      position:
+        x: 60
+        y: 76.33333333333334
+      positionAbsolute:
+        x: 784
+        y: 1310.3333333333333
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        code: "import re\n\n\ndef main(outputs: list) -> dict:\n    games_values =\
+          \ []\n    games_prefix = \"\"\n    prices_values = []\n    prices_prefix\
+          \ = \"\"\n\n    for s in outputs:\n        s = s.strip()\n        if not\
+          \ s or \"SKIP\" in s:\n            continue\n\n        # 按每个 INSERT 语句拆分（用\
+          \ ; 分割后再拼回）\n        # 先按 ;\\n 或 ; 拆成多个独立的 SQL 语句\n        statements =\
+          \ re.split(r';\\s*\\n', s)\n\n        for stmt in statements:\n        \
+          \    stmt = stmt.strip()\n            if not stmt or not stmt.upper().startswith(\"\
+          INSERT\"):\n                continue\n            # 去掉可能的 ON DUPLICATE KEY\
+          \ UPDATE\n            stmt = re.sub(r\"\\s+ON\\s+DUPLICATE\\s+KEY\\s+UPDATE\\\
+          s+.*$\", \"\", stmt, flags=re.IGNORECASE |\n                           \
+          \                                                          re.DOTALL).strip()\n\
+          \            if not stmt.endswith(\";\"):\n                stmt += \";\"\
+          \n\n            m = re.match(r\"(INSERT\\s+(?:IGNORE\\s+)?INTO\\s+(\\w+)\\\
+          s*\\([^)]+\\))\\s*VALUES\\s*(\\(.+\\))\\s*;\", stmt,\n                 \
+          \        re.IGNORECASE | re.DOTALL)\n            if m:\n               \
+          \ table_name = m.group(2).lower()\n                if table_name == \"games\"\
+          :\n                    games_prefix = m.group(1)\n                    games_values.append(m.group(3))\n\
+          \                elif table_name == \"game_prices\":\n                 \
+          \   prices_prefix = m.group(1)\n                    prices_values.append(m.group(3))\n\
+          \n    games_sql = \"\"\n    prices_sql = \"\"\n    games_count = 0\n   \
+          \ prices_count = 0\n\n    if games_values:\n        prefix = re.sub(r\"\
+          INSERT\\s+IGNORE\\s+INTO\", \"INSERT INTO\", games_prefix, flags=re.IGNORECASE)\n\
+          \        games_sql = f\"{prefix} VALUES {', '.join(games_values)} ON DUPLICATE\
+          \ KEY UPDATE release_date = VALUES(release_date), developer = VALUES(developer),\
+          \ publisher = VALUES(publisher), genres = VALUES(genres),summary = VALUES(summary);\"\
+          \n        games_count = len(games_values)\n\n    if prices_values:\n   \
+          \     # 把 appid=NULL 或 appid=0 替换为 0\n        fixed_values = []\n      \
+          \  for v in prices_values:\n            v = re.sub(r'\\(\\s*NULL\\s*,',\
+          \ '(0,', v, flags=re.IGNORECASE)\n            fixed_values.append(v)\n \
+          \       prefix = re.sub(r\"INSERT\\s+IGNORE\\s+INTO\", \"INSERT INTO\",\
+          \ prices_prefix, flags=re.IGNORECASE)\n        prices_sql = f\"{prefix}\
+          \ VALUES {', '.join(fixed_values)} ON DUPLICATE KEY UPDATE initial_price\
+          \ = VALUES(initial_price), final_price = VALUES(final_price), discount_percent\
+          \ = VALUES(discount_percent);\"\n        prices_count = len(fixed_values)\n\
+          \n    return {\n        \"games_count\": games_count,\n        \"prices_count\"\
+          : prices_count,\n        \"games_sql\": games_sql,\n        \"prices_sql\"\
+          : prices_sql,\n    }"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        outputs:
+          games_count:
+            children: null
+            type: number
+          games_sql:
+            children: null
+            type: string
+          prices_count:
+            children: null
+            type: number
+          prices_sql:
+            children: null
+            type: string
+        selected: false
+        title: Epic_执行SQL语句
+        type: code
+        variables:
+        - value_selector:
+          - '17833284066390'
+          - output
+          value_type: array[string]
+          variable: outputs
+      height: 52
+      id: '17833285632900'
+      position:
+        x: 5576
+        y: 1848
+      positionAbsolute:
+        x: 5576
+        y: 1848
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Epic_游戏信息SQL 语句插入
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: '{{#17833285632900.games_sql#}}'
+        type: tool
+      height: 114
+      id: '17833285727700'
+      position:
+        x: 5938
+        y: 1730.4
+      positionAbsolute:
+        x: 5938
+        y: 1730.4
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Epic_价格SQL 语句插入
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: '{{#17833285632900.prices_sql#}}'
+        type: tool
+      height: 114
+      id: '1783384817562'
+      position:
+        x: 5938
+        y: 1924.4
+      positionAbsolute:
+        x: 5938
+        y: 1924.4
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: Steam_价格SQL 语句插入
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: '{{#1783297741383.prices_sql#}}'
+        type: tool
+      height: 114
+      id: '1783384943521'
+      position:
+        x: 5938
+        y: 690.4000000000001
+      positionAbsolute:
+        x: 5938
+        y: 690.4000000000001
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '17833284066390'
+        output_type: string
+        selected: false
+        title: Epic_变量聚合器
+        type: variable-aggregator
+        variables:
+        - - '17833284066390178332840664012'
+          - info
+        - - '1783328406639017833284066406'
+          - info
+        - - '1783328406639017833284066408'
+          - info
+      height: 160
+      id: '1783386106120'
+      parentId: '17833284066390'
+      position:
+        x: 4128
+        y: 259.6
+      positionAbsolute:
+        x: 4852
+        y: 1493.6
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The SQL query string.
+            ja_JP: The SQL query string.
+            pt_BR: The SQL query string.
+            zh_Hans: SQL 查询语句。
+          label:
+            en_US: SQL Query
+            ja_JP: SQL Query
+            pt_BR: SQL Query
+            zh_Hans: SQL 查询语句
+          llm_description: The SQL query string.
+          max: null
+          min: null
+          name: query
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            ja_JP: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            pt_BR: Optional, Filling in this field will overwrite the database connection
+              entered during authorization.
+            zh_Hans: 选填，填写后将覆盖授权时填写的数据库连接。
+          label:
+            en_US: DB URI
+            ja_JP: DB URI
+            pt_BR: DB URI
+            zh_Hans: DB URI
+          llm_description: ''
+          max: null
+          min: null
+          name: db_uri
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: json
+          form: form
+          human_description:
+            en_US: Choose the output format.
+            ja_JP: Choose the output format.
+            pt_BR: Choose the output format.
+            zh_Hans: 选择输出格式。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: format
+          options:
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          - icon: ''
+            label:
+              en_US: CSV
+              ja_JP: CSV
+              pt_BR: CSV
+              zh_Hans: CSV
+            value: csv
+          - icon: ''
+            label:
+              en_US: YAML
+              ja_JP: YAML
+              pt_BR: YAML
+              zh_Hans: YAML
+            value: yaml
+          - icon: ''
+            label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: md
+          - icon: ''
+            label:
+              en_US: Excel
+              ja_JP: Excel
+              pt_BR: Excel
+              zh_Hans: Excel
+            value: xlsx
+          - icon: ''
+            label:
+              en_US: HTML
+              ja_JP: HTML
+              pt_BR: HTML
+              zh_Hans: HTML
+            value: html
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            ja_JP: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            pt_BR: 'Optional. For example {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              More connection options can be found at https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+            zh_Hans: '选填项。例如 {"connect_args": {"ssl": {"ca": "/path/to/ca.pem"}}}
+
+              更多连接选项可参考 https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine
+
+              '
+          label:
+            en_US: DB Config Options
+            ja_JP: DB Config Options
+            pt_BR: DB Config Options
+            zh_Hans: 数据库连接配置选项
+          llm_description: ''
+          max: null
+          min: null
+          name: config_options
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          config_options: ''
+          db_uri: ''
+          format: ''
+          query: ''
+        plugin_id: hjlarry/database
+        plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+        provider_icon: /console/api/workspaces/current/plugin/icon?tenant_id=f3728d42-8bbd-4ded-96b1-56c0ab80006d&filename=65d2d7404efb4952bb715a35ae79ccce92e70b820fd6cdb74e9acc58a505f7cf.svg
+        provider_id: hjlarry/database/database
+        provider_name: hjlarry/database/database
+        provider_type: builtin
+        selected: false
+        title: 查询价格信息
+        tool_configurations:
+          config_options:
+            type: mixed
+            value: null
+          format:
+            type: constant
+            value: json
+        tool_description: 此工具用于在已存在的数据库中执行 SQL 查询。
+        tool_label: SQL Execute
+        tool_name: sql_execute
+        tool_node_version: '2'
+        tool_parameters:
+          db_uri:
+            type: mixed
+            value: null
+          query:
+            type: mixed
+            value: SELECT * FROM game_prices ORDER BY id;
+        type: tool
+      height: 114
+      id: '1783392203319'
+      position:
+        x: 7004
+        y: 1345.4666666666667
+      positionAbsolute:
+        x: 7004
+        y: 1345.4666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 254.95129169724396
+      y: -81.94625502218656
+      zoom: 0.3401975000435942
+  rag_pipeline_variables: []
